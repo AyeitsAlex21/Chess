@@ -43,6 +43,29 @@ bool Piece::isGamePiece(){
     return ret;
 }
 
+bool Piece::isMyPiece(int player){
+    bool ret = false;
+    if(player == 0 && smile->side == white) // white
+    {
+        ret = true;
+    }
+    else if(player == -1 && smile->side == black)
+    { // black
+        ret = true;
+    }
+    return ret;
+}
+
+bool Piece::isEnemyPiece(int player){
+    bool ret = false;
+    if(player == 0 && smile->side == black){ // whites turn
+        ret = true;
+    }
+    else if(player == -1 && smile->side == white){ // blacks turn
+        ret = true;
+    }
+}
+
 Piece::~Piece(){
     delete smile;
 }
