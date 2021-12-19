@@ -11,6 +11,8 @@ public:
     Board();
     ~Board();
     void show();
+    int move_piece();
+    int checkmate();
 };
 
 #endif

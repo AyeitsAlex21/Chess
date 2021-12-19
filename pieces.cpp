@@ -5,13 +5,14 @@ struct Piece::ChesirePiece{
     char type; // type of piece it is
 };
 
-
+Piece::Piece(){
+    smile = new(ChesirePiece);
+}
 
 Piece::Piece(char type, color side){
     smile = new(ChesirePiece);
     this->smile->side = side;
     this->smile->type = type;
-    cout << this->smile->type << endl;
 }
 
 char Piece::get_type(){
@@ -22,6 +23,19 @@ color Piece::get_side(){
     return (smile->side);
 }
 
+void Piece::set_type(char type){
+    smile->type = type;
+}
+
+void Piece::set_side(color side){
+    smile->side = side;
+}
+
+void Piece::Piece_init(char type, color side){
+    this->smile->side = side;
+    this->smile->type = type;
+}
+
 bool Piece::isGamePiece(){
     bool ret = true;
     if(smile->type == 'F')
@@ -30,6 +44,5 @@ bool Piece::isGamePiece(){
 }
 
 Piece::~Piece(){
-    cout << "HEY\n";
     delete smile;
 }
