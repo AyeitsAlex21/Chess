@@ -118,6 +118,8 @@ int Board::move_piece(){
 
     } while (1);
     
+    // TODO need to finish where the piece can go, how they move,
+    // taking a piece functionality and checkmate checking
 
     do
     {
